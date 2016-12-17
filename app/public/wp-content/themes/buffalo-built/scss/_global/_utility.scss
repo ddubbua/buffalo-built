@@ -1,0 +1,83 @@
+/*-----------------*/
+/* Utility Classes */
+/*-----------------*/
+
+%nova-button {
+    @include transition (all 0.4s ease);
+    @extend %default-border-radius;
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: $medium-gray;
+    border: solid 2px $medium-gray;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    
+    &:hover {
+        color: #fff;
+    }
+}
+
+.nova-button {
+    @extend %nova-button;
+    
+    &.nova-button-white, &.nova-button-transparent:hover {
+        background-color: #fff;
+        border-color: #fff;
+    }
+    
+    &.nova-button-black {
+        background-color: #000;
+        border-color: #000;
+    }
+    
+    &.nova-button-transparent {
+        background-color: transparent;
+        border-color: #fff;
+    }
+    
+    &.nova-button-has-icon {
+        position: relative;
+        padding-right: 20px;
+        
+        &:before {
+            position: absolute;
+            right: 8px;
+            display: inline-block;
+            font-family: 'FontAwesome';
+            content: '\f01a';
+        }
+    }
+}
+
+#loadgraphic{
+	width:100%;
+	height:100%;
+	position:absolute;
+	z-index:100;
+	top:0;
+	left:0;
+	right:0;
+	bottom:0;
+	background:#fff;
+	
+}
+
+.primary-color-background {
+    .nova-button {
+        &.nova-button-white {
+            background-color: #fff;
+            border-color: #fff;
+        }
+        
+        &.nova-button-black {
+            background-color: #000;
+            border-color: #000;
+        }
+        
+        &.nova-button-transparent {
+            background-color: transparent;
+            border-color: #fff;
+        }
+    }
+}

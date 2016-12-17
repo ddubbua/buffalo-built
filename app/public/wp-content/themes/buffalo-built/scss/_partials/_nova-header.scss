@@ -1,0 +1,104 @@
+/*---------------------*/
+/* Nova Header Section */
+/*---------------------*/
+
+.nova-header {
+    .row {
+        max-width: 100%;
+    }
+    
+    .header-content {
+        height: 400px;
+        padding-top: 50px;
+        background-position: center;
+        background-size: cover;
+        text-align: center;
+        
+        .header-content-inner {
+            @extend %page-max-width;
+            @extend %vertical-center-fix;
+        }
+    }
+    
+    .nova-header-text-background-white {
+        background-color: rgba(#fff, 0.8);
+        
+        // Makes sure that even if the text wraps, the area still looks "padded"
+        @include box-shadow(10px 0 0 rgba(#fff, 0.8), -10px 0 0 rgba(#fff, 0.8));
+    }
+        
+    .nova-header-text-background-black {
+        background-color: rgba(#000, 0.7);
+        
+        // Makes sure that even if the text wraps, the area still looks "padded"
+        @include box-shadow(10px 0 0 rgba(#000, 0.7), -10px 0 0 rgba(#000, 0.7));
+    }
+        
+    .nova-header-text-white {
+        color: #fff;
+    }
+        
+    .nova-header-text-black {
+        color: #000;
+    }
+    
+    .align-text-left {
+        text-align: left;
+    }
+    
+    .align-text-right {
+        text-align: right;
+    }
+    
+    .align-text-center {
+        text-align: center;
+    }
+}
+
+/* Owl Carousel styling */
+
+.owl-theme {
+    .owl-controls {
+        .owl-page span {
+            width: 50px;
+            height: 10px;
+            -webkit-border-radius: 0;
+            -moz-border-radius: 0;
+            border-radius: 0;
+            filter: Alpha(Opacity=100);
+            opacity: 1;
+        }
+        
+        .owl-buttons div {
+            @include transition(all 0.4s ease);
+            display: none;
+            position: absolute;
+            top: 45%;
+            margin: 0;
+            background: transparent;
+            -webkit-border-radius: 0;
+            -moz-border-radius: 0;
+            border-radius: 0;
+            font-size: 50px;
+            filter: Alpha(Opacity=70);
+            opacity: 0.7;
+    
+            &:hover {
+                filter: Alpha(Opacity=100);
+                opacity: 1;
+            }
+
+            &.owl-prev {
+                left: 0;
+            }
+
+            &.owl-next {
+                right: 0;
+            }
+    
+            i {
+                cursor: pointer;
+            }
+        }
+    }
+}
