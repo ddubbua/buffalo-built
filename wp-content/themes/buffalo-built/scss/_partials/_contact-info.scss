@@ -1,0 +1,44 @@
+/*---------------------------*/
+/* NOVA Contact Info Section */
+/*---------------------------*/
+
+.nova-contact-info {
+    margin: 15px 0;
+    margin: 1.5rem 0;
+    
+    .row {
+        margin: 10px 0;
+        margin: 1rem 0;
+    }
+    
+    .column {
+        padding: 0;
+        
+        &.nova-contact-info-icon {
+            width: 40px;
+    
+            i {
+                font-size: 28px;
+                font-size: 2.8rem;
+                
+                &.nova-contact-info-location-icon:before {
+                    content: '\f041'; /* fa-map-marker */
+                }
+                
+                &.nova-contact-info-phone-icon:before {
+                    content: '\f095'; /* fa-phone */
+                }
+                
+                &.nova-contact-info-email-icon:before {
+                    content: '\f003'; /* fa-envelope-o */
+                }
+            }
+        }
+        
+        &.nova-contact-info-content {
+            width: 50%;
+            width: calc(100% - 40px);
+            word-wrap: break-word;
+        }
+    }
+}

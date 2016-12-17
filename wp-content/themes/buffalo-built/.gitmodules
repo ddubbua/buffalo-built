@@ -1,0 +1,3 @@
+[submodule "nova-core2"]
+	path = nova-core2
+	url = git@bitbucket.org:theblugiant/nova-core-2.0.git

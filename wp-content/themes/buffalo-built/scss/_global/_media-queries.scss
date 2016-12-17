@@ -1,0 +1,154 @@
+/*---------------*/
+/* Media Queries */
+/*---------------*/
+
+@media all and (min-width: $size-sm) {
+    .nova-features {
+        .nova-features-content {
+            .icon-row {
+                .nova-main-icon, .nova-icon-link, .nova-feature-column-content {
+                    float: left;
+                }
+        
+                .nova-feature-column-content {
+                    width: 60%;
+                    width: calc(100% - 90px);
+                }
+            }
+        }
+    }
+}
+
+@media all and (min-width: 601px) {
+    body.admin-bar #nav {
+        top: 46px;
+    }
+}
+
+@media all and (min-width: $size-md) {
+    .alignleft, .alignright {
+        max-width: 50%;
+        margin-top: 0;
+    }
+    
+    .alignleft {
+        float: left;
+        clear: right;
+        margin-right: 20px;
+        margin-right: 2rem;
+    }
+
+    .alignright {
+        float: right;
+        clear: left;
+        margin-left: 20px;
+        margin-left: 2rem;
+    }
+    
+    .nova-header .header-content {
+        height: 600px;
+    }
+    
+    #dl-menu {
+        display: none;
+    }
+    
+    #nav-menu {
+        display: block;
+    }
+    
+    .owl-theme .owl-controls .owl-buttons div {
+        display: block;
+    }
+    
+    .nova-cta {
+        text-align: left;
+        
+        .nova-button {
+            padding-left: 20px;
+        }
+    }
+}
+
+@media all and (min-width: 783px) {
+    body.admin-bar #nav {
+        top: 32px;
+    }
+}
+
+@media all and (min-width: $size-lg) {
+}
+
+@media all and (min-width: $size-xl) {
+}
+
+/* Fallback for IE9 not supporting Flexbox */
+
+@media all and (min-width: $size-md) {
+    .nova-features-content, .nova-team-members-content {
+        .md-span6:nth-child(2n+1) {
+            clear: both;
+        }
+    }
+	.home {
+		main > section > .row{
+			padding-bottom:0%;
+		}
+	}
+	
+    
+}
+
+@media all and (min-width: $size-lg) {
+	.nova-features-content, .nova-team-members-content {
+        .md-span6:nth-child(2n+1) {
+            clear: none;
+        }
+        
+        .lg-span3:nth-child(4n+1) {
+            clear: both;
+        }
+        
+        .lg-span4:nth-child(3n+1) {
+            clear: both;
+        }
+    }
+    .mobile-title{
+    	display:none;
+    }
+	.home {
+		main > section > .row{
+			padding-bottom:10%;
+		}
+	}
+	.mobileshow{
+		display:none;
+	}
+
+
+}
+
+@media all and (max-width: $size-lg) {
+	
+	#nav-menu ul li a{
+		padding:0 8px;
+	}
+	.home {
+		main > section > .row{
+			background:none;
+		}
+	}
+	main h3{text-align:left!important;}
+	
+}
+
+@media all and (max-width: $size-md) {
+	
+	.line-left{
+		background:none;
+		padding:0;
+	}
+	
+	
+}
+

@@ -1,0 +1,27 @@
+/*-------------------*/
+/* Editable Sections */
+/*-------------------*/
+
+.nova-edit-section-button {
+    position: absolute;
+    z-index: 1;
+    bottom: 30px;
+    right: 30px;
+    display: block;
+    width: 70px;
+    height: 70px;
+    background-color: #333;
+    background-color: rgba(#333, 0.8);
+    border-radius: 50%;
+    color: #fff;
+    font-size: 16px;
+    font-size: 1.6rem;
+    line-height: 70px;
+    text-align: center;
+    text-decoration: none;
+
+    &:hover {
+        background-color: #333;
+        color: #fff !important;
+    }
+}

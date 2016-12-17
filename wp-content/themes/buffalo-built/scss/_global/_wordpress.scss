@@ -1,0 +1,59 @@
+/*------------------------------*/
+/* Wordpress - Required Classes */
+/*------------------------------*/
+
+.aligncenter, .alignleft, .alignright {
+    display: block;
+    margin: 20px auto;
+    margin: 2rem auto;
+}
+
+.bypostauthor {
+    background-color: $light-gray;
+}
+
+.sticky {
+    background-color: $light-gray;
+}
+
+.wp-caption {
+    background-color: $light-gray;
+    padding: 10px;
+}
+
+.wp-caption-text, .gallery-caption {
+    text-align: center;
+}
+
+/* Other Wordpress classes (not required to style) */
+
+.categories {
+    display: inline-block;
+    margin: 0;
+    list-style: none;
+    
+    .cat-item {
+        display: inline-block;
+        margin: 5px 5px 5px 0;
+        
+        a {
+            display: block;
+            padding: 5px 10px;
+        }
+    }
+}
+
+#wp-calendar {
+    width: 100%;
+    text-align: center;
+}
+
+.wp-post-image {
+    box-sizing: content-box;
+}
+
+#sidebar, .searchform {
+    .screen-reader-text {
+        display: none;
+    }
+}
