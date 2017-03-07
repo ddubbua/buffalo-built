@@ -1,0 +1,191 @@
+/*-----------------*/
+/* Utility Classes */
+/*-----------------*/
+.nova-full-cover-link {
+    bottom: 0;
+    display: block;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: 1;
+}
+
+#loadgraphic {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  bottom: 0;
+  height: 100%;
+  z-index: 20;
+  background: #FFF; 
+
+  img {
+      width: 100px;
+      margin: auto;
+      display: block;
+      padding-top: 30%; 
+  }
+
+}
+
+%nova-button {
+    @include transition (all 0.4s ease);
+    display: inline-block;
+    padding: 10px 35px;
+    margin:25px auto 0;
+    border: solid 2px;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    position:relative;
+    
+    &:hover {
+        color: #fff;
+    }
+}
+
+.nova-button {
+    @extend %nova-button;
+    
+    &.nova-button-white, &.nova-button-transparent:hover {
+        background-color: #fff;
+        border-color: #fff;
+    }
+    
+    &.nova-button-black {
+        background-color: #000;
+        border-color: #000;
+    }
+    
+    &.nova-button-transparent {
+        background-color: transparent;
+        border-color: #fff;
+    }
+    
+    &.nova-button-has-icon {
+        position: relative;
+        padding-right: 20px;
+        
+        &:before {
+            position: absolute;
+            right: 8px;
+            display: inline-block;
+            font-family: 'FontAwesome';
+            content: '\f01a';
+        }
+    }
+    &.side-button {
+        display:none;
+        position:absolute;
+        left:0;
+        margin:0;
+        padding:10px 30px;
+        background:white;
+        font-weight:$hairline;
+        text-transform:uppercase;
+        letter-spacing:1px;
+        color:#6baa86;
+        border:none;
+        @extend %vertical-center-fix;
+        @include transform(rotate(-90deg));
+    }
+}
+
+body.home .nova-button.side-button {
+    @include transform(rotate(-90deg) translateX(25%));
+    background:transparent;
+    border:1px solid white;
+    color:white;
+    
+    &:hover {
+        background:white;
+        color:#6baa86;
+    }
+}
+
+.primary-color-background {
+    .nova-button {
+        &.nova-button-white {
+            background-color: #fff;
+            border-color: #fff;
+        }
+        
+        &.nova-button-black {
+            background-color: #000;
+            border-color: #000;
+        }
+        
+        &.nova-button-transparent {
+            background-color: transparent;
+            border-color: #fff;
+        }
+    }
+}
+
+.aleft {text-align:left;}
+.acenter {text-align:center;}
+.aright {text-align:right;}
+.white-text-fix {
+    text-shadow: 0px 0px 5px #000000;
+}
+
+/* Nova Scroll */
+
+.row.scroll .column {
+    padding-bottom:75px;
+}
+
+.nova-scroll {
+    cursor:pointer;
+    //overflow:hidden;
+    width:110px;
+    height:55px;
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:0;
+    margin:0 auto;
+    
+    p {
+        position:relative;
+        display:table-cell;
+        text-align:center;
+        vertical-align:bottom;
+        text-align:center;
+        height:inherit;
+        width:inherit;
+        margin:0 auto;
+        padding-bottom:2px;
+        z-index:525;
+        color:white !important;
+        font-size:13px;
+        font-size:1.3rem;
+    }
+    
+    &:after {
+        position:absolute;
+        background:url('../images/down_arrow.png') no-repeat top center;
+        background-size:contain;
+        //font-family:'FontAwesome';
+        //content:'\f107';
+        content:'';
+        height:50px;
+        color:white;
+        top:-25px;
+        text-align:center;
+        left:0;
+        right:0;
+        z-index:525;
+    }
+    &:before {
+        //content:'';
+        display:block;
+        position:absolute;
+        top:0;
+        z-index:500;
+        width:100%;
+        padding-bottom:100%;
+        border-radius:50%;
+    }
+}

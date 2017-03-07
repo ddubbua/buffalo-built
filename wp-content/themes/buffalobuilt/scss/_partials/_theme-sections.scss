@@ -1,0 +1,267 @@
+/*---------------*/
+/* NOVA Sections */
+/*---------------*/
+
+/* Section backgrounds */
+
+.white-background {
+    background-color: #fff;
+}
+
+.gray-background {
+    background-color: $light-gray;
+}
+
+/* Border Images */
+
+.nova-border-image {
+    position:absolute;
+    background:transparent;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    
+    &:before, &:after {
+        content: "";
+        position:absolute;
+        z-index:800;
+        display:block;
+        height:50px;
+        width:100%;
+        background-repeat:no-repeat;
+        background-position:top center;
+        background-size:100% 50px;
+    }
+    
+    &:before {top:0;}
+    &:after {bottom:0;}
+
+    &.swoosh-top, &.swoosh-both {
+        &:before {
+            background-image:url('../images/swoosh-top.svg');
+        }
+    }
+
+    &.swoosh-bot, &.swoosh-both {
+        &:after {
+            background-image:url('../images/swoosh-bot.svg');
+        }
+    }
+    
+    &.splatter-top, &.splatter-both {
+        &:before {
+            background-image:url(../images/splatterbar-top.png);
+        }
+    }
+    
+    &.splatter-bot, &.splatter-both {
+        &:after {
+            background-image:url(../images/splatterbar-bot.png);
+        }
+    }
+    
+    &.splatter-top-white {
+        &:before {
+            background-image:url(../images/splatterbar-top-white.png);
+        }
+    }
+}
+
+/* Subsections inside each section */
+
+.nova-section-headline {
+    text-align: center;
+    z-index:15;
+    
+    .column-inner {
+        padding-bottom: 0;
+        padding-top: 0;
+    }
+}
+
+.nova-background-overlay {
+    @include opacity(0.6);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index:10;
+}
+
+/*
+ * The sections
+ */
+
+
+.nova-features-content, .nova-team-members-content {
+    @extend %display-flex;
+    @include flex-wrap(wrap);
+    
+    > .column {
+        @extend %display-flex;
+        @include flex(0 1 auto);
+    }
+    
+    .column-inner {
+        @include flex(1 1 auto);
+        min-width: 0;
+    }
+}
+
+/* Home */
+
+body.home .nova-scroll {
+    bottom:155px;
+}
+
+body.home .nova-header-content:first-child h1 img {
+    display:block;
+    height:200px;
+    width:auto;
+}
+
+/* Testimonials Slider */ 
+.page-id-7 {
+    .nova-header { 
+        padding-top:0;
+        .nova-header-content {
+            .owl-controls {
+                position:absolute;
+                display:block;
+                top:0;
+                bottom:0;
+                left:0;
+                right:0;
+                margin:0;
+                
+                .owl-pagination {
+                    position:absolute;
+                    left:0;
+                    right:0;
+                    bottom:0;
+                    padding-bottom:15px;
+                    
+                    .owl-page span {
+                        border-radius:50%;
+                        width:15px;
+                        height:15px;
+                        background-color:rgba(white,0.6);
+                    }
+                    .owl-page.active span {
+                        background-color:rgba(white,1);
+                    }
+                }
+            }
+        }
+        .header-content {
+            min-height: 225px;
+            max-height: 400px;
+            padding:0;
+            background-position:center center;
+        
+            h1 {
+                text-align:center;
+                color:white;
+                font-size: 20px;
+                font-size: 2.0rem;
+                font-weight:$semibold;
+                letter-spacing:1px;
+            }
+            .header-content-inner-content {
+                max-width:750px;
+                
+                h5, p {
+                    color:white;
+                    text-align:center;
+                    line-height:1.25;
+                }
+            }
+        }
+    }
+}
+
+/* Team Box */
+
+#meet-the-team {
+    .flexrow {
+        width:100%;
+        display:flex;
+        flex-direction:row;
+        justify-content:space-between;
+        padding:23px;
+        
+        .nova-feature-size-large {
+            width:48%;
+            height:250px;
+            text-align:left;
+            
+            .nova-area {
+                background:rgba(91,107,123, 1.0);
+                height:100%;
+                width:100%;
+                @include transition(all .25s ease-in-out);
+                
+                .nova-feature-column-content {
+                    display:flex;
+                    align-items:center;
+                    height:100%;
+                    text-align:left;
+                    padding:20px;
+                    h3 {
+                        color:white;
+                    }
+                }
+            }
+        }
+        .nova-feature-size-large:nth-child(1) {
+            background:url('../images/steven.jpg') center center no-repeat;
+            background-size:cover;
+        }
+        .nova-feature-size-large:nth-child(2) {
+            background:red center center no-repeat;
+            background-size:cover;
+        }
+        .nova-feature-size-large:nth-child(1):hover .nova-area {
+            background:rgba(91,107,123, 0.1);
+        }
+        .nova-feature-size-large:nth-child(2):hover .nova-area {
+            background:rgba(91,107,123, 0.1);
+        }        
+    }
+}
+
+.team-box {
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    
+    p {
+        line-height:1.25;
+    }
+    h5, h3 {
+        margin:0;
+        align-self:flex-start;
+    }
+    div {
+        width:100%;
+        background:#ccc;
+        margin-bottom:10px;
+        
+        div {
+            margin:0;
+            background:rgba(91,107,123, 1.0);
+            padding:6px 10px;
+            color:white;
+        }
+    }
+    div:nth-child(10) {
+        margin-bottom:50px;
+    }
+    a {
+        margin:0 auto;
+        border:1px solid rgba(91,107,123, 1.0);
+        padding:6px 30px;
+    }
+}

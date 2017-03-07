@@ -1,0 +1,99 @@
+/*--------*/
+/* Global */
+/*--------*/
+
+html {
+    // Allows for rems to size similar to px
+    font-size: 62.5%;
+}
+
+body {
+    overflow-x: hidden;
+    font: 15px / 1.5 $font-family-proxima-nova;
+    font-size: 1.5rem;
+    -webkit-font-smoothing: subpixel-antialiased;
+}
+
+main {
+    display: block;
+    
+    > section {
+        &:first-child {
+            padding-top: 180px;
+            
+            &.nova-header {
+                padding-top: 0;
+            }
+        }
+    }
+    
+    ul, ol {
+        margin-left: 30px;
+    }
+}
+
+section {
+    position: relative;
+    padding: 30px 0;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    @extend %display-flex;
+    @include flex-direction(column);
+    @include align-items(center);
+    @include justify-content(center);
+    
+    &.background-fixed {
+        background-attachment:fixed;
+    }
+    .row {
+        position:relative;
+        .column {
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    }
+    
+    &:first-child {
+        padding:0;
+    }
+        
+    &.no-padding-top {
+        padding-top: 0;
+    }
+    
+    &.no-padding-bottom {
+        padding-bottom: 0;
+    }
+    
+    &.large-padding-top {
+        padding-top: 60px;
+    }
+    
+    &.large-padding-bottom {
+        padding-bottom: 60px;
+    }
+    &.image-padding-top {
+        padding-top: 60px;
+    }
+    
+    &.image-padding-bottom {
+        padding-bottom: 60px;
+    }
+}
+
+iframe {
+    display: block;
+    max-width: 100%;
+}
+
+img {
+    display: inline-block;
+    max-width: 100%;
+    height: auto;
+}
+
+a img {
+    border: 0;
+}

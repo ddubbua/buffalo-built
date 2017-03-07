@@ -1,0 +1,137 @@
+/*--------------------*/
+/* Nova Boxes Section */
+/*--------------------*/
+
+$box_unit: 240px;
+$box_gutter: 10px;
+
+.nova-boxes-3-columns {
+    .nova-boxes-content {
+        max-width: $max-width * 0.75;
+    }
+}
+
+.nova-boxes-content {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display:flex;
+    justify-content:flex-start;
+    align-items:flex-start;
+    flex-wrap:wrap;
+
+    .column {
+        padding: $box_gutter;
+        text-align: center;
+    }
+    
+    .nova-background-overlay {
+        @include transition(all 0.4s ease);
+        @include opacity(0.7);
+    }
+    
+    .column-inner {
+        @include transition(all 0.4s ease);
+        height: $box_unit;
+        margin: 0;
+        padding: $box_gutter $box_gutter*2;
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        
+        &.has-link:hover {
+            .nova-background-overlay {
+                background-color:black;
+                //@include opacity(0.7);
+            }
+        }
+        
+        &.has-link {
+            &.white-background:hover {
+                background-color: rgba(#fff, 0.5);
+            }
+            
+            &.light-gray-background:hover {
+                background-color: rgba(darken($light-gray, 8%), 1);
+            }
+            
+            &.medium-gray-background:hover {
+                background-color: rgba($medium-gray, 0.95);
+            }
+            
+            &.no-background:hover {
+                background-color: none;
+            }
+        }
+    }
+    
+    .nova-box-content {
+        @extend %vertical-center-fix;
+        position:relative;
+        z-index:15;
+        
+        h3 {
+            margin: 0;
+            font-weight:$semibold;
+            
+            span {
+                font-weight:$hairline;
+            }
+        }
+        
+        hr {
+            width: 45px;
+            margin: 5px auto;
+            margin: 0.5rem auto;
+        }
+        
+        p {
+            margin: 5px;
+            margin: 0.5rem;
+            font-size: 16px;
+            font-size: 1.6rem;
+            line-height: 1.5;
+        }
+        
+        h3, hr, p {
+            color:white;
+            padding:10px 15px;
+        }
+    }
+    
+    .nova-edit-button {
+        margin-top: 5px;
+        margin-top: 0.5rem;
+    }
+}
+
+/* Home Page */
+
+
+
+@media all and (min-width: $size-md) {
+    .nova-boxes-3-columns {
+        .nova-boxes-content {
+            .height-2 {
+                .column-inner {
+                    height: $box_unit * 2 + $box_gutter * 2;
+                }
+            }
+        }
+    }
+}
+
+@media all and (min-width: $size-lg) {
+    .nova-boxes-content {
+        .height-2 {
+            .column-inner {
+                height: $box_unit * 2 + $box_gutter * 2;
+            }
+        }
+    }
+    
+    .nova-boxes-content {
+        :nth-child(4), :nth-child(5) {
+            margin-top: -($box-unit + $box_gutter * 2);
+        }
+    }
+}

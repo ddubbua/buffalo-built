@@ -1,0 +1,97 @@
+/*---------------------------*/
+/* Nova Team Members Section */
+/*---------------------------*/
+
+.nova-team-members-content {
+    > .column {
+        //float: none;
+        max-width: 900px;
+        margin: 0 auto;
+        display:flex;
+        flex-wrap:wrap;
+        justify-content:center;
+        margin-bottom:40px;
+    }
+    h2 {
+        width:100%;
+        text-transform:capitalize;
+        font-weight:400;
+        font-size:28px;
+        font-size:2.8rem;
+    }
+    h4 {
+        margin-bottom: 0;
+    }
+    h5{
+        font-size:2rem;
+    }
+}
+.nova-team-group {
+    @extend %display-flex;
+    @include flex-direction(row);
+    @include justify-content(center);
+    @include flex-wrap(wrap);
+}
+
+.nova-team-member {
+    vertical-align: top;
+    display: inline-block;
+    margin-bottom:5px;
+    margin-right:5px;
+
+    h5, h6 {
+        margin: 0;
+    }
+    .nova-button {
+        border:1px solid #2d77b4;
+        color:#2d77b4;
+    }
+}
+
+.nova-team-member-picture {
+    //@include transition(all 0.4s ease);
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto;
+    //border: solid 1px #2d77b4;
+    //padding:5px;
+    //border-radius: 50%;
+    //background-clip:content-box;
+    background-color: white;
+    background-position: left top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+    .nova-team-member-content {
+        @include transition(all 0.4s ease);
+        display:block;
+        opacity:0;
+        height:100%;
+        width:100%;
+        background-color:rgba(86,113,130,.0);
+        padding:5px;
+        
+        h5 {
+            @extend %vertical-center-fix;
+            margin:0 auto;
+            color:white;
+            font-weight:100;
+            text-align:center;
+        }
+    }
+    &:hover {
+        //padding:0;
+        .nova-team-member-content {
+            opacity:1;
+            background-color:rgba(86,113,130,.5);
+        }
+    }
+    
+}
+
+.single-team{
+    h1{
+        color:#333;
+    }
+}

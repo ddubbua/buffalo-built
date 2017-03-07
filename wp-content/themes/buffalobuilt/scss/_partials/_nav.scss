@@ -1,0 +1,265 @@
+/*----------------*/
+/* Navigation Bar */
+/*----------------*/
+
+body.admin-bar {
+    .home section:first-child .nova-header-content:first-child {
+        top: -46px;
+    }
+    
+    #nav.nav-fixed, #nav {
+        top: 46px;
+    }
+}
+
+#nav {
+    z-index: 5000;
+    position: fixed;
+    width: 100%;
+    height:75px;
+    @include box-shadow(0 3px 5px 0px rgba(0,0,0,.3));
+    
+    
+    &.nav-fixed {
+        .nav-logo img {
+            content:url("../images/bb_logo_white.png");
+		    -webkit-transition: all 0.4s ease;
+		    transition: all 0.4s ease;
+        }
+    }
+    
+    .row {
+        @extend %display-flex;
+        @include align-items(center);
+        @include flex-direction(row);
+        width: 100%;
+        height: 75px;
+        padding: 0;
+        
+        .column {
+            @extend %display-flex;
+            @include justify-content(center);
+            text-transform:uppercase;
+            letter-spacing:1.2px;
+            height:100%;
+            
+            &.nav-logo {
+                position:absolute;
+                left:calc(50% - 37px);
+                right:0;
+                top:0;
+                bottom:0;
+                width:74px;
+                
+                img {
+                    height:55px;
+                    width:150px;
+                }
+            }
+        }
+    
+    }
+    
+    ul {
+        margin: 0;
+    }
+    
+    img {
+        display: block;
+        width: auto;
+    }
+    
+    a {
+        text-decoration: none;
+        // color: #fff;
+        font-family: $font-family-proxima-nova;
+        
+        img {
+            /* Fix blurriness when scaling/transitioning */
+            @include filter(blur(0));
+            /* Fix for blur filter causing issues in IE9 */
+            -ms-filter: "progid:DXImageTransform.Microsoft.gradient(enabled=false)";
+            @include transition(all 0.4s ease);
+            padding:5px;
+        }
+        
+        &:hover, &:active {
+            img {
+                @include opacity(0.75);
+            }
+        }
+    }
+}
+
+body.home #nav {
+    position: absolute;
+    bottom:0;
+    top:auto;
+    z-index: 5000;
+    width: 100%;
+    
+    &.nav-fixed {
+        top: 0;
+        z-index: 5000;
+        position: fixed;
+        width: 100%;
+        height:75px;
+        @include box-shadow(0 3px 5px 0px rgba(0,0,0,.3));
+        
+        .nav-logo img {
+            content:url("../images/bb_logo_white.png");
+        }
+    }
+}
+
+/* Mobile menu */
+#dl-menu.dl-menuwrapper {
+    float: right;
+    height: 45px;
+    
+    button, ul {
+        right: 15px;
+    }
+	.dl-trigger{
+	    i{
+	    	color:#FFF;
+			font-size:40px;
+	    }
+		margin-left:20px;
+		margin-top:3px;
+	}
+    
+    button {
+        @include transition(all 0.4s ease);
+        position: absolute;
+        top: 0;
+    }
+    
+    ul {
+        @include box-shadow(0px 2px 2px 0px rgba(#000, 0.05));
+        top: 50px;
+        left: auto;
+        width: 250px;
+        
+        li {
+            margin: 0;
+        }
+    }
+    
+    a {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        font-size: 12px;
+        font-size: 1.2rem;
+		color:$blue;
+    }
+    
+    li.dl-back:after, li > a:not(:only-child):after {
+        font-family: 'FontAwesome';
+        font-size: 18px;
+        line-height: 40px;
+        content: '\f0da';
+    }
+}
+
+/* Desktop menu */
+#nav-menu {
+    display: none;
+    
+    ul {
+        margin: 0;
+        list-style: none;
+        text-align: right;
+        display:flex;
+        justify-content:space-around;
+        
+        /* Separate Middle */
+        
+        :nth-child(2) {
+            margin-right:100px;
+        }
+        :nth-child(3) {
+            margin-left:100px;
+        }
+    
+        li {
+            position: relative;
+            vertical-align: middle;
+            display: inline-block;
+            
+        
+            a {
+                display: block;
+                padding: 10px 5px;
+                
+                &:hover, &:active {
+                    opacity: 0.75;
+                }
+            }
+            
+            &.current-menu-item a {
+                border-bottom:2px solid;
+            }
+            
+            &:last-child {
+                margin-right:0;
+            }
+        }
+        
+        .menu-item-has-children {
+            position: relative;
+        }
+        
+        ul {
+            @include box-shadow(0px 2px 2px 0px rgba(#000, 0.05));
+            @include transition(visibility 0.4s ease, opacity 0.4s ease);
+            position: absolute;
+            visibility: hidden;
+            top: 100%;
+            left: 0;
+            z-index: 1;
+            width: 250px;
+            background-color: $medium-gray;
+            background-color: rgba($medium-gray, 0.9);
+            text-align: left;
+            opacity: 0;
+            
+            &.show {
+                z-index: 2;
+                visibility: visible;
+                opacity: 1;
+            }
+            
+            &.show-adjust {
+                left: auto;
+                right: 0;
+            }
+            
+            li {
+                display: block;
+                
+                &.menu-item-has-children > a {
+                    padding-right: 25px;
+                    
+                    &:after {
+                        position: absolute;
+                        top: 9px;
+                        right: 10px;
+                        display: block;
+                        font-family: 'FontAwesome';
+                        content: '\f0da';
+                    }
+                }
+            }
+            
+            ul {
+                top: 0;
+                left: 100%;
+                
+                &.show-adjust {
+                    left: -100%;
+                }
+            }
+        }
+    }
+}

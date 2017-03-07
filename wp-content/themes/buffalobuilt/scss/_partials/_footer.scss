@@ -1,0 +1,79 @@
+/*--------*/
+/* Footer */
+/*--------*/
+
+#footer {
+    position:relative;
+}
+
+#footer a {
+    text-decoration:none;
+    font-weight:$hairline;
+}
+#footer a i {
+    font-size:16px;
+    vertical-align:10%;
+}
+#footer p {
+    margin:0;
+    line-height:1.5;
+}
+#footer .disclaimer-content {
+    .column-inner {
+        padding:25px;
+    }
+    p {
+        letter-spacing:1px;
+        font-size:13px;
+        font-size:1.3rem;
+        text-align:center;
+    }
+}
+
+.footer-top {
+    background: url(../images/footer-image.jpg) top center no-repeat;
+    background-size: cover;
+    padding-top:70px;
+    padding-bottom:70px;
+    
+    .column-inner {
+        padding:20px 25px;
+    }
+    #footer-left, #footer-right {
+        position:relative;
+        z-index:500;
+    }
+    .row {
+        @extend %display-flex;
+        @include flex-wrap(wrap);
+    }
+    .ahead {
+        display:none;
+        position:absolute;
+        right:40px;
+        top:100px;
+        height:250px;
+        width:200px;
+        background:url('../images/tagline_footer.png') center center no-repeat;
+        background-size:contain;
+    }
+    
+    .back-top {
+        display:block;
+        position:absolute;
+        right:25px;
+        bottom:95px;
+        width:40px;
+        height:75px;
+        border:1px solid white;
+        background:url('../images/down_arrow.png') center center no-repeat;
+        background-size:auto 85%;
+        transform: rotate(180deg);
+    }
+}
+
+.footer-bottom {
+    position:relative;
+    z-index:500;
+    margin-top:-70px;
+}
